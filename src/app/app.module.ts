@@ -9,16 +9,26 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
-import { IgxButtonModule } from 'igniteui-angular';
+import { RoleComponent } from './role/role.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import {IgxIconModule, IgxNavbarModule, IgxNavigationDrawerModule} from 'igniteui-angular';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RoleComponent,
+    NavbarComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
     BrowserAnimationsModule,
+    IgxNavbarModule,
+    IgxIconModule,
+    IgxNavigationDrawerModule,
     ToastrModule.forRoot({
       timeOut: 4000,
       progressBar: true,
@@ -29,7 +39,7 @@ import { IgxButtonModule } from 'igniteui-angular';
       positionClass: 'toast-bottom-left'
     }),
     NgxSpinnerModule,
-    IgxButtonModule
+    IgxIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

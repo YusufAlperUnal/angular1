@@ -1,19 +1,37 @@
-
+<app-navbar></app-navbar>
 
 <div class="row">
-  <div class="col-md-4">
-    col-1
-  </div>
-  <div class="col-md-4">
-    col-2
-  </div>
-  <div class="col-md-4">
-    col-3
-  </div>
-</div>
-<router-outlet></router-outlet>
-<ngx-spinner type="ball-scale-multiple">
+   <div class="col-md-3">
+     <ul>
+       <li routerLink="home">
+         Home
+       </li>
+       <li routerLink="role">
+         Role
+       </li>
+       <li routerLink="user">
+         User
+       </li>
+       <ul>
+         <li [routerLink]="['user','7']">
+           User 7 Detail
+         </li>
+         <li [routerLink]="['user','7','role']">
+           User 7 Role
+         </li>
+         <li routerLink="data-binding">
+           Data-Binding
+         </li>
+       </ul>
+     </ul>
+     <div class="col-md-9">
+       <router-outlet></router-outlet>
+   </div>
+   </div>
 
+ </div>
+
+
+<ngx-spinner type="ball-scale-multiple">
   <p style="font-size: 20px; color: white">Loading...</p>
 </ngx-spinner>
-<button igxButton="flat">Flat</button>
