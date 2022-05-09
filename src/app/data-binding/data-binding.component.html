@@ -1,0 +1,58 @@
+
+<div class="row">
+  <div class="col-md-12">
+    <h2>One Way Binding <span>From Component to DOM</span></h2>
+    <div class="row">
+      <div class="col-md-2">
+        <h3>Interpolation</h3>
+        Ad: {{user.name}}, Soyad:{{user.surname}}<br>
+        Hesaplama: {{3+5}}
+        <div classs="image">
+          <img src="{{user.favorite_place_image}}">
+        </div>
+      </div>
+      <div class="col-md-3">
+        <h3>Property Binding</h3>
+        <input [type]="type" [value]="user.name">
+      </div>
+      <div class="col-md-3">
+        <h3>Attiribute Binding</h3>
+        <input [type]="type"
+               [value]="user.name"
+               [attr.disabled]="!user.isEditable ? 'disabled': null">
+      </div>
+      <div class="col-md-2">
+        <h3>Class Binding</h3>
+        <p [class.red]="user.name==='Alper' ? true: false">Renk Değeriiiii
+        </p>
+      </div>
+      <div class="col-md-2">
+          <h3>Style Binding</h3>
+        <p [style.color]="user.name==='Alper' ? 'orange': 'blue'" > Style Color</p>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h2>One Way Binding <span>From DOM to Component </span></h2>
+      </div>
+    <div class="row">
+    <div class="col-md-12">
+      <h3>Event Binding</h3>
+<button (click)="butonclicked()">OK!</button>
+      <input type="text" [value]="user.name" (keyup.enter)="inputSubmit($event)">
+    </div>
+    </div>
+    </div>
+ <div class="col-md-12">
+   <div class="row">
+     <h2> Two Way Binding</h2>
+     <div class="col-md-12">
+       <h3>NgModel</h3>
+       <input type="text" [(ngModel)]="user.name">
+       <p>{{user.name}}</p>
+     </div>
+   </div>
+ </div>
+
+</div>
