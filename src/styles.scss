@@ -1,9 +1,8 @@
 // CSS Reset, comment out if not required or using a different module
 @import '~minireset.css/minireset';
 /* You can add global styles to this file, and also import other style files */
-@import "../node_modules/bootstrap/dist/css/bootstrap-reboot.min.css";
-@import "../node_modules/bootstrap/dist/css/bootstrap-grid.min.css";
 @import "ngx-toastr/toastr";
+
 
 @import "~igniteui-angular/lib/core/styles/themes/index";
 // Uncomment the following lines if you want to add a custom palette:
@@ -17,3 +16,10 @@
 @include theme($default_palette);
 
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* Importing Datepicker SCSS file. */
+@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";

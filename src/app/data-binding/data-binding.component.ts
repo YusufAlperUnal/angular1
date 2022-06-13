@@ -11,7 +11,7 @@ export class DataBindingComponent implements OnInit {
     name:"Alper",
     surname:"Unal",
     favorite_place:"Ata Kule",
-    favorite_place_image:"https://www.ekoyapidergisi.org/images/2020/Atakule5_1586425802.jpg",
+    favorite_place_image:"https://sifirarabafiyatlari.net/wp-content/uploads/2021/08/bmw-840i-gran-coupe.png",
     isEditable:true
   }
   type="text";
@@ -26,5 +26,4 @@ export class DataBindingComponent implements OnInit {
     console.log(value)
 alert(value.target.value+ "   geldi...")
   }
-
 }
