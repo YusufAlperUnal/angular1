@@ -1,5 +1,5 @@
 
-<div class="row">
+<div class="row style">
   <div class="col-md-12">
     <h2>One Way Binding <span>From Component to DOM</span></h2>
     <div class="row">
@@ -8,7 +8,7 @@
         Ad: {{user.name}}, Soyad:{{user.surname}}<br>
         Hesaplama: {{3+5}}
         <div classs="image">
-          <img src="{{user.favorite_place_image}}">
+          <img  src="{{user.favorite_place_image}} ;">
         </div>
       </div>
       <div class="col-md-3">
@@ -19,13 +19,13 @@
         <h3>Attiribute Binding</h3>
         <input [type]="type"
                [value]="user.name"
-               [attr.disabled]="!user.isEditable ? 'disabled': null">
+               [disabled]="!user.isEditable">
       </div>
       <div class="col-md-2">
-        <h3>Class Binding</h3>
-        <p [class.red]="user.name==='Alper' ? true: false">Renk Değeriiiii
-        </p>
-      </div>
+      <h3>Class Binding</h3>
+      <p [class.red]="user.name==='Alper' ? true: false">Renk Değeriiiii
+      </p>
+    </div>
       <div class="col-md-2">
           <h3>Style Binding</h3>
         <p [style.color]="user.name==='Alper' ? 'orange': 'blue'" > Style Color</p>
@@ -54,5 +54,4 @@
      </div>
    </div>
  </div>
-
 </div>
