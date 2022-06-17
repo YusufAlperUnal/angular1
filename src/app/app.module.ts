@@ -1,32 +1,36 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import {IgxIconModule, IgxNavbarModule, IgxNavigationDrawerModule} from 'igniteui-angular';
+import { CookieService } from 'ngx-cookie-service';
+import {registerLocaleData} from "@angular/common";
+import localTr from '@angular/common/locales/tr';
+import localeTrExtra from '@angular/common/locales/extra/tr';
+import {HttpClientModule} from "@angular/common/http";
+registerLocaleData(localTr,"tr-Tr", localeTrExtra)
 
-import { IgxButtonModule } from 'igniteui-angular';
-import { HomeComponent } from './home/home.component';
-import { UserComponent } from './user/user.component';
-import { RoleComponent } from './role/role.component';
-import { UserDetailComponent } from './user/user-detail/user-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    UserComponent,
-    RoleComponent,
-    UserDetailComponent
+    NavbarComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
     BrowserAnimationsModule,
+    IgxNavbarModule,
+    IgxIconModule,
+    IgxNavigationDrawerModule,
+    HttpClientModule,
     ToastrModule.forRoot({
       timeOut: 4000,
       progressBar: true,
@@ -37,9 +41,8 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
       positionClass: 'toast-bottom-left'
     }),
     NgxSpinnerModule,
-    IgxButtonModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

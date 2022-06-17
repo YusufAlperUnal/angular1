@@ -9,7 +9,7 @@ import { NgxSpinnerService} from 'ngx-spinner';
 })
 export class AppComponent implements OnInit {
   title = 'alper-angular-course1';
-  constructor(private toastr: ToastrService, 
+  constructor(private toastr: ToastrService,
     private spinner: NgxSpinnerService){}
   ngOnInit(): void {
     this.showSuccess()
@@ -17,12 +17,12 @@ export class AppComponent implements OnInit {
   }
   showSuccess(){
     this.toastr.success("Angular Projeme Hoşgeldiniz",'Giriş Başarılı !');
-  } 
+  }
 
   showSpinner(){
     this.spinner.show();
     setTimeout(() => {
     this.spinner.hide()
-  }, 5000);
+  }, 1000);
   }
 }

@@ -1,30 +1,51 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { RoleComponent } from './role/role.component';
-import { UserDetailComponent } from './user/user-detail/user-detail.component';
-import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   {
     path:"home",
-    component:HomeComponent
+    loadChildren:()=> import("./home/home.module").then(m => m.HomeModule)
   },
   {
     path:"role",
-    component:RoleComponent
+    loadChildren:()=> import("./role/role.module").then(m => m.RoleModule)
   },
   {
     path:"user",
-    component:UserComponent
+    loadChildren:()=> import("./user/user.module").then(m => m.UserModule)
   },
   {
-    path:"user/:id",
-    component:UserDetailComponent
+    path:"data-binding",
+    loadChildren:()=> import("./data-binding/data-binding.module").then(m => m.DataBindingModule)
+  },
+  {
+    path:"storage",
+    loadChildren:()=> import("./storage/storage.module").then(m => m.StorageModule)
+  },
+  {
+    path:"directives",
+    loadChildren:()=> import("./directives/directives.module").then(m => m.DirectivesModule)
+  },
+  {
+    path:"pipes",
+    loadChildren:()=> import("./pipes/pipes.module").then(m => m.PipesModule)
+  },
+  {
+    path:"parents",
+    loadChildren:()=> import("./parents/parents.module").then(m => m.ParentsModule)
+  },
+  {
+    path:"forms",
+    loadChildren:()=> import("./forms/forms.module").then(m => m.AngularFormsModule)
+  },
+  {
+    path:"Map",
+    loadChildren:()=> import("./map/map.module").then(m => m.MapModule)
   },
   {
     path:"**",
-    component:HomeComponent 
+    component:HomeComponent
   }
 ];
 
