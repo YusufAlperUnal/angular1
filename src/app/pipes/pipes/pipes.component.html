@@ -1,0 +1,44 @@
+<div class="row style" style="margin:2rem;">
+  <div class="col-md-4">
+    <div class="">
+      <h3>Lower Case</h3>
+      <p>normal : {{title}}</p>
+      <p>lowercase: {{title | lowercase}}</p>
+      <p>upper: {{title | uppercase}}</p>
+      <p>titlecase: {{title | titlecase}}</p>
+    </div>
+    <div class="col-md-4">
+      <p>pipe date: {{today | date: "fullDate"}}</p>
+      <p>Türkçe  date: {{today | date: "fullDate":"":"tr-Tr"}}</p>
+    </div>
+    <div>
+      <h3>Currency Pipe</h3>
+        <p>normal value : {{cashValue}}</p>
+      <p>currency pipe  value : {{cashValue | currency: "EUR"}}</p>
+      <p> tr currency pipe  value : {{cashValue | currency: "TRY":"symbol":"1.2-2":"tr-Tr"}}</p>
+    </div>
+
+  </div>
+  <div class="col-md-4">
+    <h3>Json Pipe</h3>
+    <p>Without Pipe</p>
+    <pre>{{objectVal}}</pre>
+    <p>With Pipe</p>
+    <pre>{{objectVal | json}}</pre>
+  </div>
+  <div class="col-md-4">
+      <h3>Slice Pipe</h3>
+      <p> normal : {{cityName}}</p>
+      <p> slice pipe hali : {{cityName | slice:2:6}}</p>
+      <p> slice pipe hali : {{cityName | slice:-2}}</p>
+
+    <h3>Custom Pipe</h3>
+    <p> {{cash | tl}}</p>
+    <br>
+    <div class="col-md-2">
+      <h3>Percent Pipe</h3>
+      <p>{{percentVal | percent}}</p>
+      <p>{{percentVal | percent:"":"tr-Tr"}}</p>
+    </div>
+  </div>
+</div>

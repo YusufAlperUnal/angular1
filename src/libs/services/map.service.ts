@@ -1,0 +1,88 @@
+import { Injectable } from '@angular/core';
+import {Subject} from "rxjs";
+interface city{
+  id:number,
+  name:string,
+  plaka:number,
+  region:string
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+export class MapService {
+  cities=[
+    {
+      id:1,
+      name:"İSTANBUL",
+       region:"Marmara",
+       plaka:34
+    },
+    {
+      id:2,
+      name:"İzmir",
+       region:"Ege",
+       plaka:35
+    },
+    {
+      id:3,
+      name:"Ankara",
+      region:"Anadolu",
+      plaka:6
+    },
+    {
+      id:5,
+      name:"Antalya",
+       region:"Akdeniz",
+       plaka:7
+    },
+    {
+      id:6,
+      name:"Samsun",
+       region:"Karadeniz",
+       plaka:55
+    },
+   ]
+  public cityNameSubject= new Subject();
+  public cityPlakaSubject= new Subject();
+  public cityRegionSubject= new Subject();
+  constructor() { }
+  getCityNames(){
+    const data= this.cities.map(elem=>({
+      id:elem.id,
+        name:elem.name
+    }))
+    this.cityNameSubject.next(data )
+  }
+  getCityPlakas(){
+    const data= this.cities.map(elem=>({
+      id:elem.id,
+      name:elem.name,
+      plaka:elem.plaka
+    }))
+    this.cityPlakaSubject.next(data)
+  }
+  getCityRegions(){
+    const data= this.cities.map(elem=>({
+      id:elem.id,
+      name:elem.name,
+      region:elem.region
+    }))
+    this.cityRegionSubject.next(data)
+  }
+
+  save(value: city){
+    const index= this.cities.findIndex(el=>el.id=== value.id)
+
+    if(index>-1) {
+      this.cities[index] = value;
+    }
+    else{
+      this.cities.push(value)
+    }
+    this.getCityRegions();
+    this.getCityPlakas();
+    this.getCityNames();
+  }
+
+}

@@ -1,0 +1,23 @@
+<div class="row style">
+  <div class="col-md-5">
+  <input tye="text" [(ngModel)]="name"  >
+  <button (click)="setItem(name)" >Set Item</button>
+  <button (click)="getItem()">Get Item</button>
+  <button (click)="clearItem()">Clear Item</button>
+<br>
+  <p> Ng Model : {{name}} </p>
+  <p> Local Storage Value: {{localStorageVal}} </p>
+</div>
+  <div class="col-md-5">
+    NAME:<input type="text"  [(ngModel)]="objName"><br>
+    SURNAME:<input type="text"  [(ngModel)]="objSurname"><br>
+    AGE:<input type="text"  [(ngModel)]="objAge"><br>
+     <button (click)="setObject()"> Set OBject </button>
+    <button (click)="getObject()">Get OBject </button>
+    <br>
+    object value:{{localStorageObjVal}}
+  </div>
+  <div class="col-md-2">
+    <button [routerLink]= "['../cookie']">Go to Cookie Page</button>
+  </div>
+</div>
